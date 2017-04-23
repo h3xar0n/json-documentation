@@ -50,3 +50,13 @@ menu items table.
 |&emsp; discussionID|The ID of the discussion that is being commented on|integer|required||
 |&emsp; time|The time the comment was posted|string|optional|Time is GMT. Format is YYYY-MM-DD HH:MM:SS Default is the time the comment is recieved by the server.| 
 |&emsp; text|The text of the comment|string|required||
+
+## forecast.json represents a one day forecast
+| element     | description                             | type    | notes                                                                                |
+|-------------|-----------------------------------------|---------|--------------------------------------------------------------------------------------|
+| date        | The date of the forecast                | string  | Format is YYYY-MM-DD                                                                 |
+| description | The description of the weather          | string  | Can have these values: "sunny","overcast", "partly cloudy", "raining", and "snowing" |
+| maxTemp     | The maximum temperature                 | integer | Temperature in degrees Celsius                                                       |
+| minTemp     | The minimum temperature                 | integer | Temperature in degrees Celsius                                                       |
+| windSpeed   | The speed of the wind                   | integer | Speed in kilometers per hour                                                         |
+| danger      | Whether or not the weather is dangerous | boolean |   
