@@ -1,7 +1,14 @@
 # json-documentation
 
-## Represents a song
+## song.json represents a song
 
+| element  | description | type            |required|
+|----------|-------------|-----------------|--------|
+|song      |Top level    |song data object |yes|
+|---------:|-------------|-----------------|---|
+|title     |Song title   |string           |yes|
+|artist    |Song artist  |string           |yes|
+|musicians |A list of musicians who play on the song |array of strings|no|
 <table>
   <tr>
     <td colspan="2">element</td>
@@ -15,7 +22,7 @@
     <td></td>
     <td>Top level</td>
     <td>song data object</td>
-    <td></td>
+    <td>yes</td>
     <td></td>
   </tr>
   <tr>
@@ -23,7 +30,7 @@
     <td>title</td>
     <td>Song title</td>
     <td>string</td>
-    <td></td>
+    <td>yes</td>
     <td></td>
   </tr>
   <tr>
@@ -31,7 +38,7 @@
     <td>artist</td>
     <td>Song artist</td>
     <td>string</td>
-    <td></td>
+    <td>no</td>
     <td></td>
   </tr>
   <tr>
