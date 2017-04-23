@@ -1,0 +1,11 @@
+{
+  "comment": {
+    "userID": "aeidelman",
+    "discussionID": 964564445654,
+    "time": "2017-04-23 4:04:37",
+    "text": "Honey, do we need more Hazelnut creamer?"
+  }
+}
+
+// Note: time is GMT and also optional. If not included, then it uses the current
+// time when the request is recieved by the server.
