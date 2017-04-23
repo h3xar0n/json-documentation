@@ -47,8 +47,6 @@ menu items table.
 |---|---|---|---|---|
 |comment|Top level|comment data object|required||
 |&emsp; userID|The ID of the user making the comment|string|required||
-|&emsp; discussionID|The ID of the discussion that is being commented on|integer
-|required||
-|&emsp; time|The time the comment was posted|string|optional|Time is GMT. Format is
-YYYY-MM-DD HH:MM:SS Default is the time the comment is recieved by the server.|
+|&emsp; discussionID|The ID of the discussion that is being commented on|integer|required||
+|&emsp; time|The time the comment was posted|string|optional|Time is GMT. Format is YYYY-MM-DD HH:MM:SS Default is the time the comment is recieved by the server.| 
 |&emsp; text|The text of the comment|string|required||
