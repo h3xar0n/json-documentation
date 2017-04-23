@@ -1,5 +1,7 @@
 # json-documentation
 
-| element | description | type | required | notes |
-|---------|-------------|------|----------|-------|
-|stuff    |       stuff |stuff | stuff    | stuff |
+## Represents a song
+
+| element | description | type            | required | notes |
+|---------|-------------|-----------------|----------|-------|
+|song     |Top level    |song data object |          |       |
