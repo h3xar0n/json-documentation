@@ -13,7 +13,7 @@
   <tr>
     <td>song</td>
     <td></td>
-    <td>top level</td>
+    <td>Top level</td>
     <td>song data object</td>
     <td></td>
     <td></td>
@@ -21,8 +21,24 @@
   <tr>
     <td></td>
     <td>title</td>
-    <td>top level</td>
-    <td>song data object</td>
+    <td>Song title</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>artist</td>
+    <td>Song artist</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>musicians</td>
+    <td>A list of musicians who play on the song</td>
+    <td>array of string</td>
     <td></td>
     <td></td>
   </tr>
