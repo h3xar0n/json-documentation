@@ -1,28 +1,60 @@
-# json-documentation
+# json-doc-reformat
 
 ## song.json represents a song
+
+```
+{
+"songs":
+  {
+    "title": "Secrets",
+    "artist": "The Weeknd",
+    "musicians":
+      [ "Abel Makkonen Tesfaye", "Roland Orzabal", 
+        "Curt Smith"]
+  }
+} 
+```
 
 | element         | description                             | type           |
 |-----------------|-----------------------------------------|----------------|
 |song             |Top level                                |song data object|
-|&emsp; title     |Song title                               |string          |
-|&emsp; artist    |Song artist                              |string          |
-|&emsp; musicians |A list of musicians who play on the song |array of strings|
+|title            |Song title                               |string          |
+|artist           |Song artist                              |string          |
+|musicians        |A list of musicians who play on the song |array of strings|
+
 
 ## menu.json represents a menu in a UI
 
-| element       ||| description                             | type                |
-|-----|------|----|-----------------------------------------|---------------------|
-|menu           |||Top level                                |array of menu columns|
-||     header    ||The name of the column                   |string               |
-||     items     ||A list of menu items in the columns      |array of menu items  |
-|||             id|The ID of the menu item                  |string               |
-|||          label|The label that is displayed in the UI    |string               |
+```
+{
+"menu": [ 
+  { "header": "File",
+    "items": [
+      {"id": "Open", "label": "Open"},    
+      {"id": "New", "label": "New"},
+      {"id": "Close", "label": "Close"}
+  ]},
+  { "header": "View",
+    "items": [
+      {"id": "ZoomIn", "label": "Zoom In"},
+      {"id": "ZoomOut", "label": "Zoom Out"},
+      {"id": "OriginalView", "label": "Original View"}
+  ]}
+]}
+```
+
+| element       | description                             | type                |
+|---------------|-----------------------------------------|---------------------|
+|menu           |Top level                                |array of menu columns|
+|     header    |The name of the column                   |string               |
+|     items     |A list of menu items in the columns      |array of menu items  |
+|             id|The ID of the menu item                  |string               |
+|          label|The label that is displayed in the UI    |string               |
 
 ### alternative documentation with seperate tables instead of indentation for nesting
 
 Although this method is harder to read, it is more useful if we have another JSON 
-response that uses menu items in a different context, then we could just link to the 
+response that uses menu items in a different context. In that case, we could just link to the 
 menu items table.
 
 #### menu object: represents a menu
@@ -47,13 +79,24 @@ menu items table.
 
 ## comment.json represents a comment
 
-| element |   | description                                       | type              | required|notes|
-|----|----|---------------------------------------------------|-------------------|---------|---|
-| comment |   | Top level                                         |comment data object|required | |
-|   | userID    |   | The ID of the user making the comment             | string | required | |
-|   | discussionID  | The ID of the discussion that is being commented on| integer | required | |
-|   | time | The time the comment was posted | string | optional | Time is GMT. Format is YYYY-MM-DD HH:MM:SS Default is the time the comment is recieved by the server.| 
-|   | text | The text of the comment         | string | required |
+```
+{
+  "comment": {
+    "userID": "aeidelman",
+    "discussionID": 964564445654,
+    "time": "2017-04-23 4:04:37",
+    "text": "Honey, do we need more Hazelnut creamer?"
+  }
+}
+```
+
+| element       | description                                        | type              | required|notes|
+|---------------|----------------------------------------------------|-------------------|---------|-----|
+| comment       | Top level                                          |comment data object|required |     |
+| userID        | The ID of the user making the comment              | string            |required |     |
+| discussionID  | The ID of the discussion that is being commented on| integer           |required |     |
+| time          | The time the comment was posted                    | string            |optional | Time is GMT. Format is YYYY-MM-DD HH:MM:SS Default is the time the comment is recieved by the server.| 
+| text          | The text of the comment                            | string            |required |     |
 
 ## forecast.json represents a one day forecast
 
