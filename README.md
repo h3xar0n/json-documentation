@@ -11,13 +11,13 @@
 
 ## menu.json represents a menu in a UI
 
-| element         | description                             | type                |
-|-----------------|-----------------------------------------|---------------------|
-|menu             |Top level                                |array of menu columns|
-|&emsp; header    |The name of the column                   |string               |
-|&emsp; items     |A list of menu items in the columns      |array of menu items  |
-|&emsp;&emsp; id  |The ID of the menu item                  |string               |
-|&emsp;&emsp;label|The label that is displayed in the UI    |string               |
+| element       ||| description                             | type                |
+|-----|------|----|-----------------------------------------|---------------------|
+|menu           |||Top level                                |array of menu columns|
+||     header    ||The name of the column                   |string               |
+||     items     ||A list of menu items in the columns      |array of menu items  |
+|||             id|The ID of the menu item                  |string               |
+|||          label|The label that is displayed in the UI    |string               |
 
 ### alternative documentation with seperate tables instead of indentation for nesting
 
@@ -29,7 +29,7 @@ menu items table.
 
 | element         | description                             | type                |
 |-----------------|-----------------------------------------|---------------------|
-| menu            |Top level                                |array of menu columns|
+| menu            | Top level                               |array of menu columns|
 
 #### menu column object: represents a column in a menu 
 
@@ -47,13 +47,13 @@ menu items table.
 
 ## comment.json represents a comment
 
-|element|description|type|required|notes|
-|---|---|---|---|---|
-|comment|Top level|comment data object|required||
-|&emsp; userID|The ID of the user making the comment|string|required||
-|&emsp; discussionID|The ID of the discussion that is being commented on|integer|required||
-|&emsp; time|The time the comment was posted|string|optional|Time is GMT. Format is YYYY-MM-DD HH:MM:SS Default is the time the comment is recieved by the server.| 
-|&emsp; text|The text of the comment|string|required||
+|element      || description                                       | type              | required|notes|
+|----|---|-----|---------------------------------------------------|-------------------|---------|---|
+|comment      ||Top level                                          |comment data object|required ||
+|| userID      |The ID of the user making the comment              |string             |required ||
+|| discussionID|The ID of the discussion that is being commented on|integer            |required ||
+|| time        |The time the comment was posted                    |string             |optional |Time is GMT. Format is YYYY-MM-DD HH:MM:SS Default is the time the comment is recieved by the server.| 
+|| text        |The text of the comment                            |string             |required||
 
 ## forecast.json represents a one day forecast
 
@@ -80,12 +80,14 @@ menu items table.
 |           | windSpeed   | The speed of the wind                    | integer                   | Speed in kilometers per hour                                                         |
 |           | danger      | Whether or not the weather is dangerous  | boolean                   |                                                                                      |
 
+## meeting.json represents a scheduled meeting
 
-
-
-
-
-
-
-
-
+| element |             | description                                                     | type                | required | notes                                                                   |
+|---------|-------------|-----------------------------------------------------------------|---------------------|----------|-------------------------------------------------------------------------|
+| meeting |             | Top level                                                       | meeting data object | required |                                                                         |
+|         | time        | The time of the meeting                                         | string              | required | Time is GMT. Format is YYYY-MM-DD HH:MM                                 |
+|         | duration    | The duration of the meeting                                     | integer             | required | Duration is in minutes                                                  |
+|         | description | The description of the meeting                                  | string              | required |                                                                         |
+|         | location    | The location of the meeting                                     | string              | optional | Default is an empty string.                                             |
+|         | reminder    | A reminder to notify participants of the meeting                | integer             | optional | Measured in minutes. Default is 10 minutes.                             |
+|         | invitees    | A list of the email addresses of people invited to the meetings | array of strings    | optional | The strings should be valid email addresses. Default is an empty array. |
