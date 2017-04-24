@@ -7,5 +7,5 @@
     "reminder": 15,
     "invitees": ["michael@example.com", "thelma@example.com",
                 "david@example.com", "leon@example.com"]
-  }
+  }
 }
