@@ -47,13 +47,13 @@ menu items table.
 
 ## comment.json represents a comment
 
-|element     |   | description                                       | type              | required|notes|
-|----|---|-----|---------------------------------------------------|-------------------|---------|---|
-|comment     |   |Top level                                          |comment data object|required ||
-|   |userID      |The ID of the user making the comment              |string             |required ||
-|   |discussionID|The ID of the discussion that is being commented on|integer            |required ||
-|   | time        |The time the comment was posted                    |string             |optional |Time is GMT. Format is YYYY-MM-DD HH:MM:SS Default is the time the comment is recieved by the server.| 
-|   | text        |The text of the comment                            |string             |required||
+| element |   | description                                       | type              | required|notes|
+|----|----|---------------------------------------------------|-------------------|---------|---|
+| comment |   | Top level                                         |comment data object|required | |
+|   | userID    |   | The ID of the user making the comment             | string | required | |
+|   | discussionID  | The ID of the discussion that is being commented on| integer | required | |
+|   | time | The time the comment was posted | string | optional | Time is GMT. Format is YYYY-MM-DD HH:MM:SS Default is the time the comment is recieved by the server.| 
+|   | text | The text of the comment         | string | required |
 
 ## forecast.json represents a one day forecast
 
