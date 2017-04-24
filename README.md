@@ -1,4 +1,4 @@
-# json-doc-reformat
+# JSON documentation
 
 ## song.json represents a song
 
@@ -100,6 +100,17 @@ menu items table.
 
 ## forecast.json represents a one day forecast
 
+```
+{
+  "date": "2015-09-01",
+  "description": "sunny",
+  "maxTemp": 22,
+  "minTemp": 20,
+  "windSpeed": 12,
+  "danger": false
+}
+```
+
 | element     | description                             | type    | notes                                                                                |
 |-------------|-----------------------------------------|---------|--------------------------------------------------------------------------------------|
 | date        | The date of the forecast                | string  | Format is YYYY-MM-DD                                                                 |
@@ -111,26 +122,73 @@ menu items table.
 
 ## 3cast.json represents a three day forecast
 
-| element   |             | description                              | type                      | notes                                                                                |
-|-----------|-------------|------------------------------------------|---------------------------|--------------------------------------------------------------------------------------|
-| longitude |             | The longitude of the forecast's location | integer                   |                                                                                      |
-| latitude  |             | The latitude of the forecast's location  | integer                   |                                                                                      |
-| forecasts |             | Forecasts for three days                 | array of forecast objects |                                                                                      |
-|           | date        | The date of the forecast                 | string                    | Format is YYYY-MM-DD                                                                 |
-|           | description | The description of the weather           | string                    | Can have these values: "sunny","overcast", "partly cloudy", "raining", and "snowing" |
-|           | maxTemp     | The maximum temperature                  | integer                   | Temperature in degrees Celsius                                                       |
-|           | minTemp     | The minimum temperature                  | integer                   | Temperature in degrees Celsius                                                       |
-|           | windSpeed   | The speed of the wind                    | integer                   | Speed in kilometers per hour                                                         |
-|           | danger      | Whether or not the weather is dangerous  | boolean                   |                                                                                      |
+```
+{
+  "longitude": 47.60,
+  "latitude": 122.33,
+  "forecasts": [
+    {
+      "date": "2015-09-01",
+      "description": "sunny",
+      "maxTemp": 22,
+      "minTemp": 20,
+      "windSpeed": 12,
+      "danger": false
+    },
+    {
+      "date": "2015-09-02",
+      "description": "overcast",
+      "maxTemp": 21,
+      "minTemp": 17,
+      "windSpeed": 15,
+      "danger": false
+    },
+    {
+      "date": "2015-09-03",
+      "description": "raining",
+      "maxTemp": 20,
+      "minTemp": 18,
+      "windSpeed": 13,
+      "danger": false
+    }
+  ]
+}
+```
+
+| element                | description                              | type                      | notes                                                                                |
+|------------------------|------------------------------------------|---------------------------|--------------------------------------------------------------------------------------|
+| longitude              | The longitude of the forecast's location | integer                   |                                                                                      |
+| latitude               | The latitude of the forecast's location  | integer                   |                                                                                      |
+| forecasts              | Forecasts for three days                 | array of forecast objects |                                                                                      |
+|            date        | The date of the forecast                 | string                    | Format is YYYY-MM-DD                                                                 |
+|            description | The description of the weather           | string                    | Can have these values: "sunny","overcast", "partly cloudy", "raining", and "snowing" |
+|            maxTemp     | The maximum temperature                  | integer                   | Temperature in degrees Celsius                                                       |
+|            minTemp     | The minimum temperature                  | integer                   | Temperature in degrees Celsius                                                       |
+|            windSpeed   | The speed of the wind                    | integer                   | Speed in kilometers per hour                                                         |
+|            danger      | Whether or not the weather is dangerous  | boolean                   |                                                                                      |
 
 ## meeting.json represents a scheduled meeting
 
-| element |             | description                                                     | type                | required | notes                                                                   |
-|---------|-------------|-----------------------------------------------------------------|---------------------|----------|-------------------------------------------------------------------------|
-| meeting |             | Top level                                                       | meeting data object | required |                                                                         |
-|         | time        | The time of the meeting                                         | string              | required | Time is GMT. Format is YYYY-MM-DD HH:MM                                 |
-|         | duration    | The duration of the meeting                                     | integer             | required | Duration is in minutes                                                  |
-|         | description | The description of the meeting                                  | string              | required |                                                                         |
-|         | location    | The location of the meeting                                     | string              | optional | Default is an empty string.                                             |
-|         | reminder    | A reminder to notify participants of the meeting                | integer             | optional | Measured in minutes. Default is 10 minutes.                             |
-|         | invitees    | A list of the email addresses of people invited to the meetings | array of strings    | optional | The strings should be valid email addresses. Default is an empty array. |
+```
+{
+  "meeting" : {
+    "time": "2015-09-01 10:00",
+    "duration": 60,
+    "description": "2016 Strategic Planning Meeting",
+    "location": "Building 23, Room 206",
+    "reminder": 15,
+    "invitees": ["michael@example.com", "thelma@example.com",
+                "david@example.com", "leon@example.com"]
+  }
+}
+```
+
+| element              | description                                                     | type                | required | notes                                                                   |
+|----------------------|-----------------------------------------------------------------|---------------------|----------|-------------------------------------------------------------------------|
+| meeting              | Top level                                                       | meeting data object | required |                                                                         |
+|          time        | The time of the meeting                                         | string              | required | Time is GMT. Format is YYYY-MM-DD HH:MM                                 |
+|          duration    | The duration of the meeting                                     | integer             | required | Duration is in minutes                                                  |
+|          description | The description of the meeting                                  | string              | required |                                                                         |
+|          location    | The location of the meeting                                     | string              | optional | Default is an empty string.                                             |
+|          reminder    | A reminder to notify participants of the meeting                | integer             | optional | Measured in minutes. Default is 10 minutes.                             |
+|          invitees    | A list of the email addresses of people invited to the meetings | array of strings    | optional | The strings should be valid email addresses. Default is an empty array. |
